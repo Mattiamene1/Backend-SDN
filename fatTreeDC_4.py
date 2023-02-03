@@ -228,3 +228,7 @@ def defineNet():
     CLI(net)
     net.stop() 
 
+
+if __name__ == '__main__':
+    setLogLevel( 'info' )
+    defineNet()
