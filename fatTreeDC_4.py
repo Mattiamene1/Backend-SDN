@@ -222,6 +222,42 @@ def defineNet():
     info('\n*** Testing Network\n')
     net.pingAll()
 
+    info('\n*** Topology Morphing\n')    
+
+    net.configLinkStatus("sw1", "router", "up")
+    net.configLinkStatus("sw2", "router", "up")
+    #net.configLinkStatus("sw3", "router", "up")
+
+
+    router.cmd("wireshark -i router-eth1 --display-filter icmp -k &")
+    router.cmd("wireshark -i router-eth2 --display-filter icmp -k &")
+    router.cmd("wireshark -i router-eth3 --display-filter icmp -k &")
+
+    time.sleep(8)
+    
+    info( '*** Changing hosts default routes...\n')
+
+    pc1.cmd("ip route add default via 192.168.1.254")
+    pc2.cmd("ip route add default via 192.168.1.254")
+    pc3.cmd("ip route add default via 192.168.1.254")
+    pc4.cmd("ip route add default via 192.168.1.254")
+
+    cam1.cmd("ip route add default via 192.168.2.254")
+    cam2.cmd("ip route add default via 192.168.2.254")
+    cam3.cmd("ip route add default via 192.168.2.254")
+    cam4.cmd("ip route add default via 192.168.2.254")
+
+    #pr1.cmd("ip route add default via 192.168.3.254")
+    #pr2.cmd("ip route add default via 192.168.3.254")
+    #pr3.cmd("ip route add default via 192.168.3.254")
+    #pr4.cmd("ip route add default via 192.168.3.254")
+
+    router.cmd("ip route add 192.168.1.0 via 192.168.1.254")
+    router.cmd("ip route add 192.168.2.0 via 192.168.2.254")
+    #router.cmd("ip route add 192.168.2.0 via 192.168.3.254")
+
+    info('\n*** Testing Network #2\n')
+    net.pingAll()
 
     CLI(net)
     net.stop() 
