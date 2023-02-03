@@ -103,7 +103,7 @@ def defineNet():
     h8 = net.addHost( 'h8', ip="10.1.1.3/24")  #Host 8 POD 1
 
     info( '*** Adding Hosts POD 2\n' )
-     h9 = net.addHost( 'h9' , ip="10.2.0.2/24")  #Host 9  POD 2
+    h9 = net.addHost( 'h9' , ip="10.2.0.2/24")   #Host 9  POD 2
     h10 = net.addHost( 'h10', ip="10.2.0.3/24")  #Host 10 POD 2
     h11 = net.addHost( 'h11', ip="10.2.1.2/24")  #Host 11 POD 2
     h12 = net.addHost( 'h12', ip="10.2.1.3/24")  #Host 12 POD 2
