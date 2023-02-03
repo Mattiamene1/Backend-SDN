@@ -190,11 +190,11 @@ def defineNet():
 
     ################# Linking POD 1 ############################
     info( '*** Linking POD 1 Hosts h5,h6 to Edge Switch sw1-0\n' )
-    net.addLink( h5, sw0_0) 
-    net.addLink( h6, sw0_0)
+    net.addLink( h5, sw1_0) 
+    net.addLink( h6, sw1_0)
     info( '*** Linking POD 1 Hosts h7,h8 to Edge Switch sw1-1\n' )
-    net.addLink( h7, sw0_1)
-    net.addLink( h8, sw0_1)
+    net.addLink( h7, sw1_1)
+    net.addLink( h8, sw1_1)
     
     ################# Linking POD 2 ############################
     info( '*** Linking POD 2 Hosts h9,h10 to Edge Switch sw2-0\n' )
