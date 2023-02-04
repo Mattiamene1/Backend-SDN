@@ -54,15 +54,15 @@ def defineNet():
 
     ################# Core Switches ############################
     info( '*** Adding Core Switches\n' )
-    sw1 = net.addSwitch( 'sw1' )      #SW Core 0    IP: 10.4.1.1
-    sw2 = net.addSwitch( 'sw2' )      #SW Core 1    IP: 10.4.1.2
-    sw3 = net.addSwitch( 'sw3' )      #SW Core 2    IP: 10.4.1.3
-    sw4 = net.addSwitch( 'sw4' )      #SW Core 3    IP: 10.4.1.4
+    sw1 = net.addSwitch( 'sw1', ip="10.4.1.1" )      #SW Core 0    
+    sw2 = net.addSwitch( 'sw2', ip="10.4.1.2" )      #SW Core 1    
+    sw3 = net.addSwitch( 'sw3', ip="10.4.1.3" )      #SW Core 2    
+    sw4 = net.addSwitch( 'sw4', ip="10.4.1.4" )      #SW Core 3    
 
     ################# AGGREGATION SWITCHES #####################
     info( '*** Adding Aggregation Switches\n' )
-    sw0_2 = net.addSwitch( 'sw0_2' )      #SW Agg POD 0      ip="10.0.2.1"
-    sw0_3 = net.addSwitch( 'sw0_3' )      #SW Agg POD 0      ip="10.0.3.2"
+    sw0_2 = net.addSwitch( 'sw0_2', ip="10.0.2.1" )      #SW Agg POD 0      
+    sw0_3 = net.addSwitch( 'sw0_3', ip="10.0.3.2" )      #SW Agg POD 0      
 
     sw1_2 = net.addSwitch( 'sw1_2' )      #SW Agg POD 1      ip="10.1.2.1"
     sw1_3 = net.addSwitch( 'sw1_3' )      #SW Agg POD 1      ip="10.1.3.2"
@@ -70,22 +70,22 @@ def defineNet():
     sw2_2 = net.addSwitch( 'sw2_2' )      #SW Agg POD 2      ip="10.2.2.1"
     sw2_3 = net.addSwitch( 'sw2_3' )      #SW Agg POD 2      ip="10.2.3.2"
 
-    sw3_2 = net.addSwitch( 'sw3_2' )      #SW Agg POD 3      ip="10.3.2.1"
-    sw3_3 = net.addSwitch( 'sw3_3' )      #SW Agg POD 3      ip="10.3.3.2"
+    sw3_2 = net.addSwitch( 'sw3_2', ip="10.3.2.1" )      #SW Agg POD 3      
+    sw3_3 = net.addSwitch( 'sw3_3', ip="10.3.3.2" )      #SW Agg POD 3      
 
     ####################### EDGE SWITCHES ######################
     info( '*** Adding Edge Switches\n' )
-    sw0_0 = net.addSwitch( 'sw0_0' )      #SW Edge POD 0     ip="10.0.0.1"
-    sw0_1 = net.addSwitch( 'sw0_1' )      #SW Edge POD 0     ip="10.0.1.1"
+    sw0_0 = net.addSwitch( 'sw0_0', ip="10.0.0.1" )      #SW Edge POD 0     
+    sw0_1 = net.addSwitch( 'sw0_1', ip="10.0.1.1" )      #SW Edge POD 0     
 
-    sw1_0 = net.addSwitch( 'sw1_0' )      #SW Edge POD 1     ip="10.1.0.1"
-    sw1_1 = net.addSwitch( 'sw1_1' )      #SW Edge POD 1     IP="10.1.1.1"
+    sw1_0 = net.addSwitch( 'sw1_0', ip="10.1.0.1" )      #SW Edge POD 1     
+    sw1_1 = net.addSwitch( 'sw1_1', ip="10.1.1.1" )      #SW Edge POD 1     
 
-    sw2_0 = net.addSwitch( 'sw2_0' )      #SW Edge POD 2     ip="10.2.0.1"
-    sw2_1 = net.addSwitch( 'sw2_1' )      #SW Edge POD 2     ip="10.2.1.1"
+    sw2_0 = net.addSwitch( 'sw2_0', ip="10.2.0.1" )      #SW Edge POD 2     
+    sw2_1 = net.addSwitch( 'sw2_1', ip="10.2.1.1" )      #SW Edge POD 2     
 
-    sw3_0 = net.addSwitch( 'sw3_0' )      #SW Edge POD 3     ip="10.3.0.1"
-    sw3_1 = net.addSwitch( 'sw3_1' )      #SW Edge POD 3     ip="10.3.1.1"
+    sw3_0 = net.addSwitch( 'sw3_0', ip="10.3.0.1" )      #SW Edge POD 3     
+    sw3_1 = net.addSwitch( 'sw3_1', ip="10.3.1.1" )      #SW Edge POD 3     
 
 
     ################# POD Hosts ############################
@@ -188,7 +188,7 @@ def defineNet():
     net.addLink( h3, sw0_1)
     net.addLink( h4, sw0_1)
 
-    ################# Linking POD 1 ############################
+    ################# Linking POD 1 ############################        ##Dopo aver corretto non pinga da h1 a h2
     info( '*** Linking POD 1 Hosts h5,h6 to Edge Switch sw1-0\n' )
     net.addLink( h5, sw1_0) 
     net.addLink( h6, sw1_0)
