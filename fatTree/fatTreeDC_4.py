@@ -64,8 +64,8 @@ def defineNet():
 
     ################# AGGREGATION SWITCHES #####################
     info( '*** Adding Aggregation Routers\n' )
-    r00 = net.addHost( 'r00' , ip="10.0.2.1/24", cls=LinuxRouter )      #Router Agg POD 0      
-    r01 = net.addHost( 'r01' , ip="10.0.3.2/24", cls=LinuxRouter )      #Router Agg POD 0      
+    r00 = net.addHost( 'r00' , cls=LinuxRouter ) #ip="10.0.2.1/24", cls=LinuxRouter )      #Router Agg POD 0      
+    r01 = net.addHost( 'r01' , cls=LinuxRouter ) #ip="10.0.3.2/24", cls=LinuxRouter )      #Router Agg POD 0      
 
     ##r10 = net.addHost( 'r10', ip="10.1.2.1/24", cls=LinuxRouter )      #Router Agg POD 1      
     #r11 = net.addHost( 'r11', ip="10.1.3.2/24", cls=LinuxRouter )      #Router Agg POD 1      
