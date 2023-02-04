@@ -117,7 +117,8 @@ def defineNet():
     ############################################################
     ############################################################
     ############# Linking Agg Sw to Core Sw POD 0 ##############
-    info( '*** Linking POD 0 Agg Sw to Core Sw\n' )
+    info( '\n*** Linking Agg Switches to Core Switches\n' )
+    #info( '*** Linking POD 0 Agg Sw to Core Sw\n' )
     net.addLink( sw0_2, sw1 ) # Core 1
     net.addLink( sw0_2, sw2 ) # Core 2
 
@@ -125,7 +126,7 @@ def defineNet():
     net.addLink( sw0_3, sw4 ) # Core 4
 
     ############# Linking Agg Sw to Core Sw POD 1 ##############
-    info( '*** Linking POD 1 Agg Sw to Core Sw\n' )
+    #info( '*** Linking POD 1 Agg Sw to Core Sw\n' )
     net.addLink( sw1_2, sw1 ) # Core 1
     net.addLink( sw1_2, sw2 ) # Core 2
 
@@ -133,7 +134,7 @@ def defineNet():
     net.addLink( sw1_3, sw4 ) # Core 4
 
     ############# Linking Agg Sw to Core Sw POD 2 ##############
-    info( '*** Linking POD 1 Agg Sw to Core Sw\n' )
+    #info( '*** Linking POD 1 Agg Sw to Core Sw\n' )
     net.addLink( sw2_2, sw1 ) # Core 1
     net.addLink( sw2_2, sw2 ) # Core 2
 
@@ -141,7 +142,7 @@ def defineNet():
     net.addLink( sw2_3, sw4 ) # Core 4
 
     ############# Linking Agg Sw to Core Sw POD 3 ##############
-    info( '*** Linking POD 3 Agg Sw to Core Sw\n' )
+    #info( '*** Linking POD 3 Agg Sw to Core Sw\n' )
     net.addLink( sw3_2, sw1 ) # Core 1
     net.addLink( sw3_2, sw2 ) # Core 2
 
@@ -151,6 +152,7 @@ def defineNet():
     ############################################################
     ############################################################
     ############# Linking Edge Sw to Agg Sw POD 0 ##############
+    info( '*** Linking Edge Switches to Aggregate Switches\n' )
     net.addLink( sw0_0, sw0_2 ) # |
     net.addLink( sw0_0, sw0_3 ) # /
 
@@ -181,41 +183,42 @@ def defineNet():
     ############################################################
     ############################################################
     ################# Linking POD 0 ############################
-    info( '*** Linking POD 0 Hosts h1,h2 to Edge Switch sw0-0\n' )
+    info( '*** Linking hosts to Edge Switchea\n' )
+    #info( '*** Linking POD 0 Hosts h1,h2 to Edge Switch sw0-0\n' )
     net.addLink( h1, sw0_0) 
     net.addLink( h2, sw0_0)
-    info( '*** Linking POD 0 Hosts h3,h4 to Edge Switch sw0-1\n' )
+    #info( '*** Linking POD 0 Hosts h3,h4 to Edge Switch sw0-1\n' )
     net.addLink( h3, sw0_1)
     net.addLink( h4, sw0_1)
 
     ################# Linking POD 1 ############################        ##Dopo aver corretto non pinga da h1 a h2
-    info( '*** Linking POD 1 Hosts h5,h6 to Edge Switch sw1-0\n' )
+    #info( '*** Linking POD 1 Hosts h5,h6 to Edge Switch sw1-0\n' )
     net.addLink( h5, sw1_0) 
     net.addLink( h6, sw1_0)
-    info( '*** Linking POD 1 Hosts h7,h8 to Edge Switch sw1-1\n' )
+    #info( '*** Linking POD 1 Hosts h7,h8 to Edge Switch sw1-1\n' )
     net.addLink( h7, sw1_1)
     net.addLink( h8, sw1_1)
     
     ################# Linking POD 2 ############################
-    info( '*** Linking POD 2 Hosts h9,h10 to Edge Switch sw2-0\n' )
+    #info( '*** Linking POD 2 Hosts h9,h10 to Edge Switch sw2-0\n' )
     net.addLink( h9, sw2_0) 
     net.addLink( h10, sw2_0)
-    info( '*** Linking POD 2 Hosts h11,h12 to Edge Switch sw2-1\n' )
+    #info( '*** Linking POD 2 Hosts h11,h12 to Edge Switch sw2-1\n' )
     net.addLink( h11, sw2_1)
     net.addLink( h12, sw2_1)
 
     ################# Linking POD 3 ############################
-    info( '*** Linking POD 3 Hosts h3,h14 to Edge Switch sw3-0\n' )
+    #info( '*** Linking POD 3 Hosts h3,h14 to Edge Switch sw3-0\n' )
     net.addLink( h13, sw3_0) 
     net.addLink( h14, sw3_0)
-    info( '*** Linking POD 3 Hosts h15,h16 to Edge Switch sw3-1\n' )
+    #info( '*** Linking POD 3 Hosts h15,h16 to Edge Switch sw3-1\n' )
     net.addLink( h15, sw3_1)
     net.addLink( h16, sw3_1)
 
 
     #############################################################################################################
     
-    info( '*** Starting network\n')
+    info( '\n*** Starting network\n')
     net.start()
 
 
