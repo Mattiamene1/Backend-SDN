@@ -163,8 +163,8 @@ def defineNet():
     ############################################################
     ############# Linking Edge Sw to Agg Sw POD 0 ##############
     info( '*** Linking Edge Switches to Aggregate Switches\n' )
-    net.addLink( sw0_0, sw0_2 ) # |
-    net.addLink( sw0_0, sw0_3 ) # /
+    net.addLink( sw0_0, sw0_2, intfName1='sw0-eth0', intfName2='router-eth0') # |
+    net.addLink( sw0_0, sw0_3, intfName1='sw0-eth1', intfName2='router-eth1') # /
 
     net.addLink( sw0_1, sw0_2 ) # \
     net.addLink( sw0_1, sw0_3 ) # |
@@ -193,7 +193,7 @@ def defineNet():
     ############################################################
     ############################################################
     ################# Linking POD 0 ############################
-    info( '*** Linking hosts to Edge Switchea\n' )
+    info( '*** Linking hosts to Edge Switches\n' )
     #info( '*** Linking POD 0 Hosts h1,h2 to Edge Switch sw0-0\n' )
     net.addLink( h1, sw0_0) 
     net.addLink( h2, sw0_0)
@@ -225,7 +225,7 @@ def defineNet():
     net.addLink( h15, sw3_1)
     net.addLink( h16, sw3_1)
 
-    c0.start()
+    #c0.start()
     #h1.setDefaultRoute(intf='h1-eth0')
     #############################################################################################################
     
@@ -237,7 +237,7 @@ def defineNet():
     net.pingAll()
 
 
-    time.sleep(8)    
+    time.sleep(5)    
 
     CLI(net)
     net.stop() 
