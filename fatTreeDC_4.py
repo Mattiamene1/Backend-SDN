@@ -59,25 +59,29 @@ def defineNet():
     c0 = net.addController('c0',controller=RemoteController,ip='127.0.0.1',port = 6633)
 
     ################# Core Switches ############################
-    info( '*** Adding Core Switches\n' )
-    sw1 = net.addSwitch( 'sw1', ip="10.4.1.1" )      #SW Core 0    
-    sw2 = net.addSwitch( 'sw2', ip="10.4.1.2" )      #SW Core 1    
-    sw3 = net.addSwitch( 'sw3', ip="10.4.1.3" )      #SW Core 2    
-    sw4 = net.addSwitch( 'sw4', ip="10.4.1.4" )      #SW Core 3    
+    info( '*** Adding Core Switches - Routers\n' )
+    sw1 = net.addHost( 'sw1', ip="10.4.1.1/24", cls=LinuxRouter)    #Sw core 0
+    sw2 = net.addHost( 'sw2', ip="10.4.1.2/24", cls=LinuxRouter)    #Sw core 1
+    sw3 = net.addHost( 'sw3', ip="10.4.1.3/24", cls=LinuxRouter)    #Sw core 2
+    sw4 = net.addHost( 'sw4', ip="10.4.1.4/24", cls=LinuxRouter)    #Sw core 3
+    #sw1 = net.addSwitch( 'sw1', ip="10.4.1.1" )      #SW Core 0    
+    #sw2 = net.addSwitch( 'sw2', ip="10.4.1.2" )      #SW Core 1    
+    #sw3 = net.addSwitch( 'sw3', ip="10.4.1.3" )      #SW Core 2    
+    #sw4 = net.addSwitch( 'sw4', ip="10.4.1.4" )      #SW Core 3    
 
     ################# AGGREGATION SWITCHES #####################
-    info( '*** Adding Aggregation Switches\n' )
-    sw0_2 = net.addSwitch( 'sw0_2', ip="10.0.2.1" )      #SW Agg POD 0      
-    sw0_3 = net.addSwitch( 'sw0_3', ip="10.0.3.2" )      #SW Agg POD 0      
+    info( '*** Adding Aggregation Switches - Routers\n' )
+    sw0_2 = net.addHost( 'sw0_2', ip="10.0.2.1/24", cls=LinuxRouter )      #SW Agg POD 0      
+    sw0_3 = net.addHost( 'sw0_3', ip="10.0.3.2/24", cls=LinuxRouter )      #SW Agg POD 0      
 
-    sw1_2 = net.addSwitch( 'sw1_2' )      #SW Agg POD 1      ip="10.1.2.1"
-    sw1_3 = net.addSwitch( 'sw1_3' )      #SW Agg POD 1      ip="10.1.3.2"
+    sw1_2 = net.addHost( 'sw1_2', ip="10.1.2.1/24", cls=LinuxRouter )      #SW Agg POD 1      
+    sw1_3 = net.addHost( 'sw1_3', ip="10.1.3.2/24", cls=LinuxRouter )      #SW Agg POD 1      
 
-    sw2_2 = net.addSwitch( 'sw2_2' )      #SW Agg POD 2      ip="10.2.2.1"
-    sw2_3 = net.addSwitch( 'sw2_3' )      #SW Agg POD 2      ip="10.2.3.2"
+    sw2_2 = net.addHost( 'sw2_2', ip="10.2.2.1/24", cls=LinuxRouter )      #SW Agg POD 2      
+    sw2_3 = net.addHost( 'sw2_3', ip="10.2.3.2/24", cls=LinuxRouter )      #SW Agg POD 2      
 
-    sw3_2 = net.addSwitch( 'sw3_2', ip="10.3.2.1" )      #SW Agg POD 3      
-    sw3_3 = net.addSwitch( 'sw3_3', ip="10.3.3.2" )      #SW Agg POD 3      
+    sw3_2 = net.addHost( 'sw3_2', ip="10.3.2.1/24", cls=LinuxRouter )      #SW Agg POD 3      
+    sw3_3 = net.addHost( 'sw3_3', ip="10.3.3.2/24", cls=LinuxRouter )      #SW Agg POD 3      
 
     ####################### EDGE SWITCHES ######################
     info( '*** Adding Edge Switches\n' )
@@ -221,7 +225,8 @@ def defineNet():
     net.addLink( h15, sw3_1)
     net.addLink( h16, sw3_1)
 
-
+    c0.start()
+    #h1.setDefaultRoute(intf='h1-eth0')
     #############################################################################################################
     
     info( '\n*** Starting network\n')
