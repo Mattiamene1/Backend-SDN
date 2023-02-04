@@ -20,9 +20,9 @@ from ipaddress import ip_address
 from mininet.topo import Topo
 from mininet.net import Mininet
 from mininet.node import CPULimitedHost
-from mininet.link import TCLink
+from mininet.link import Link, TCLink
 from mininet.node import Node
-from mininet.node import RemoteController
+from mininet.node import RemoteController, OVSKernelSwitch, UserSwitch
 from mininet.log import setLogLevel, info
 from mininet.cli import CLI
 import time
