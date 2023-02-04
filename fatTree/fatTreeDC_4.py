@@ -57,7 +57,7 @@ def defineNet():
 
     ################# Core Routers ############################
     info( '*** Adding Core Routers\n' )
-    r1 = net.addHost( 'r1') #, ip="10.4.1.1/24", cls=LinuxRouter)    #Router core 0
+    #r1 = net.addHost( 'r1') #, ip="10.4.1.1/24", cls=LinuxRouter)    #Router core 0
     #r2 = net.addHost( 'r2', ip="10.4.1.2/24", cls=LinuxRouter)    #Router core 1
     #r3 = net.addHost( 'r3', ip="10.4.1.3/24", cls=LinuxRouter)    #Router core 2
     #r4 = net.addHost( 'r4', ip="10.4.1.4/24", cls=LinuxRouter)    #Router core 3 
@@ -100,27 +100,27 @@ def defineNet():
     h4 = net.addHost( 'h4', ip="10.0.1.3/24", mac="00:00:00:00:00:04")  #Host 4 POD 0
 
     #( '*** Adding Hosts POD 1\n' )
-    h5 = net.addHost( 'h7', ip="10.1.0.2/24", mac="00:00:00:00:00:05")  #Host 5 POD 1
-    h6 = net.addHost( 'h6', ip="10.1.0.3/24", mac="00:00:00:00:00:06")  #Host 6 POD 1
-    h7 = net.addHost( 'h7', ip="10.1.1.2/24", mac="00:00:00:00:00:07")  #Host 7 POD 1
-    h8 = net.addHost( 'h8', ip="10.1.1.3/24", mac="00:00:00:00:00:08")  #Host 8 POD 1
+    #h5 = net.addHost( 'h7', ip="10.1.0.2/24", mac="00:00:00:00:00:05")  #Host 5 POD 1
+    #h6 = net.addHost( 'h6', ip="10.1.0.3/24", mac="00:00:00:00:00:06")  #Host 6 POD 1
+    #h7 = net.addHost( 'h7', ip="10.1.1.2/24", mac="00:00:00:00:00:07")  #Host 7 POD 1
+    #h8 = net.addHost( 'h8', ip="10.1.1.3/24", mac="00:00:00:00:00:08")  #Host 8 POD 1
 
     #( '*** Adding Hosts POD 2\n' )
-    h9 = net.addHost( 'h9' , ip="10.2.0.2/24", mac="00:00:00:00:00:09")   #Host 9  POD 2
-    h10 = net.addHost( 'h10', ip="10.2.0.3/24", mac="00:00:00:00:00:10")  #Host 10 POD 2
-    h11 = net.addHost( 'h11', ip="10.2.1.2/24", mac="00:00:00:00:00:11")  #Host 11 POD 2
-    h12 = net.addHost( 'h12', ip="10.2.1.3/24", mac="00:00:00:00:00:12")  #Host 12 POD 2
+    #h9 = net.addHost( 'h9' , ip="10.2.0.2/24", mac="00:00:00:00:00:09")   #Host 9  POD 2
+    #h10 = net.addHost( 'h10', ip="10.2.0.3/24", mac="00:00:00:00:00:10")  #Host 10 POD 2
+    #h11 = net.addHost( 'h11', ip="10.2.1.2/24", mac="00:00:00:00:00:11")  #Host 11 POD 2
+    #h12 = net.addHost( 'h12', ip="10.2.1.3/24", mac="00:00:00:00:00:12")  #Host 12 POD 2
 
     #( '*** Adding Hosts POD 3\n' )
-    h13 = net.addHost( 'h13', ip="10.3.0.2/24", mac="00:00:00:00:00:13")  #Host 13 POD 3
-    h14 = net.addHost( 'h14', ip="10.3.0.3/24", mac="00:00:00:00:00:14")  #Host 14 POD 3
-    h15 = net.addHost( 'h15', ip="10.3.1.2/24", mac="00:00:00:00:00:15")  #Host 15 POD 3
-    h16 = net.addHost( 'h16', ip="10.3.1.3/24", mac="00:00:00:00:00:16")  #Host 16 POD 3
+    #h13 = net.addHost( 'h13', ip="10.3.0.2/24", mac="00:00:00:00:00:13")  #Host 13 POD 3
+    #h14 = net.addHost( 'h14', ip="10.3.0.3/24", mac="00:00:00:00:00:14")  #Host 14 POD 3
+    #h15 = net.addHost( 'h15', ip="10.3.1.2/24", mac="00:00:00:00:00:15")  #Host 15 POD 3
+    #h16 = net.addHost( 'h16', ip="10.3.1.3/24", mac="00:00:00:00:00:16")  #Host 16 POD 3
 
     ############################################################
     ############################################################
-    net.addLink( r1, r00)
-    net.addLink( r1, r01)
+    #net.addLink( r1, r00)
+    #net.addLink( r1, r01)
     ############################################################
     ############################################################
     ############# Linking Edge Sw to Agg Sw POD 0 ##############
