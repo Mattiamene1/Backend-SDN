@@ -19,6 +19,10 @@ HOSTS:                h1  h2      h3  h4      h5  h6      h7  h8
 from ipaddress import ip_address
 from mininet.topo import Topo
 from mininet.net import Mininet
+
+from mininet.node import CPULimitedHost
+from mininet.link import TCLink
+
 from mininet.node import Node
 from mininet.node import RemoteController
 from mininet.log import setLogLevel, info
@@ -48,9 +52,11 @@ class LinuxRouter( Node ):
 
 
 def defineNet():
-    net = Mininet( controller = RemoteController, waitConnected=True  )
+    #net = Mininet( controller = RemoteController, waitConnected=True  )
+    net = Mininet(host=CPULimitedHost, link=TCLink, controller = RemoteController)
     info( '*** Adding controller\n' )
-    c0 = net.addController( 'c0' )
+    #c0 = net.addController( 'c0' )
+    c0 = net.addController('c0',controller=RemoteController,ip='127.0.0.1',port = 6633)
 
     ################# Core Switches ############################
     info( '*** Adding Core Switches\n' )
