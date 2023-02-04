@@ -65,7 +65,7 @@ def defineNet():
     ################# AGGREGATION SWITCHES #####################
     info( '*** Adding Aggregation Routers\n' )
     r00 = net.addHost( 'r00' , cls=LinuxRouter ) #ip="10.0.2.1/24", cls=LinuxRouter )      #Router Agg POD 0      
-    r01 = net.addHost( 'r01' , cls=LinuxRouter ) #ip="10.0.3.2/24", cls=LinuxRouter )      #Router Agg POD 0      
+    #r01 = net.addHost( 'r01' , cls=LinuxRouter ) #ip="10.0.3.2/24", cls=LinuxRouter )      #Router Agg POD 0      
 
     ##r10 = net.addHost( 'r10', ip="10.1.2.1/24", cls=LinuxRouter )      #Router Agg POD 1      
     #r11 = net.addHost( 'r11', ip="10.1.3.2/24", cls=LinuxRouter )      #Router Agg POD 1      
@@ -127,8 +127,8 @@ def defineNet():
     info( '*** Linking Edge Switches to Aggregate Switches\n' )
     net.addLink( r00, sw00) # |
     net.addLink( r00, sw01) # \
-    net.addLink( r01, sw00) # /
-    net.addLink( r01, sw01) # |
+    #net.addLink( r01, sw00) # /
+    #net.addLink( r01, sw01) # |
 
     net.addLink( sw00, h1)
     net.addLink( sw00, h2)
@@ -150,13 +150,13 @@ def defineNet():
     r00.cmd("echo 1 > /proc/sys/net/ipv4/ip_forward")
 
     #### r01 agg Router #####
-    r01.cmd("ifconfig r01-eth0 0")
-    r01.cmd("ifconfig r01-eth1 0")
-    r01.cmd("ifconfig r01-eth0 hw ether 00:00:00:02:01")
-    r01.cmd("ifconfig r01-eth1 hw ether 00:00:00:02:02")
-    r01.cmd("ip addr add 10.0.2.3/24 brd + dev r01-eth0") #h3
-    r01.cmd("ip addr add 10.0.1.3/24 brd + dev r01-eth0") #h4
-    r01.cmd("echo 1 > /proc/sys/net/ipv4/ip_forward")
+    #r01.cmd("ifconfig r01-eth0 0")
+    #r01.cmd("ifconfig r01-eth1 0")
+    #r01.cmd("ifconfig r01-eth0 hw ether 00:00:00:02:01")
+    #r01.cmd("ifconfig r01-eth1 hw ether 00:00:00:02:02")
+    #r01.cmd("ip addr add 10.0.2.3/24 brd + dev r01-eth0") #h3
+    #r01.cmd("ip addr add 10.0.1.3/24 brd + dev r01-eth0") #h4
+    #r01.cmd("echo 1 > /proc/sys/net/ipv4/ip_forward")
 
     #### Hosts pod 0 ####
     h1.cmd("ip route add default via 10.0.0.1")
