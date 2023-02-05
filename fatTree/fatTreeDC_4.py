@@ -54,7 +54,7 @@ def defineNet():
 
     net = Mininet( controller=RemoteController, link=TCLink, switch=OVSKernelSwitch )
     
-    info( '*** Adding Hosts ***\n' )
+    info( '*** Adding Hosts\n' )
     h1 = net.addHost( 'h1', ip="10.0.0.2/24", mac="00:00:00:00:00:01")  #Host 1 POD 0
     h2 = net.addHost( 'h2', ip="10.0.0.3/24", mac="00:00:00:00:00:02")  #Host 2 POD 0
     h3 = net.addHost( 'h3', ip="10.0.1.2/24", mac="00:00:00:00:00:03")  #Host 3 POD 0
@@ -68,7 +68,7 @@ def defineNet():
     #r4 = net.addHost( 'r4', ip="10.4.1.4/24", cls=LinuxRouter)    #Router core 3 
 
     ################# AGGREGATION SWITCHES #####################
-    info( '*** Adding Aggregation Routers ***\n' )
+    info( '*** Adding Aggregation Routers\n' )
     r00 = net.addHost( 'r00' )      
     r01 = net.addHost( 'r01' )      
 
@@ -82,7 +82,7 @@ def defineNet():
     #r31 = net.addHost( 'r31', ip="10.3.3.2/24", cls=LinuxRouter )      #Router Agg POD 3      
 
     ####################### EDGE SWITCHES ######################
-    info( '*** Adding Edge Switches ***\n' )
+    info( '*** Adding Edge Switches\n' )
     sw00 = net.addSwitch( 'sw00')#, ip="10.0.0.1/24" )      #SW Edge POD 0     
     sw01 = net.addSwitch( 'sw01')#, ip="10.0.1.1/24" )      #SW Edge POD 0     
 
@@ -102,9 +102,9 @@ def defineNet():
     ############# Linking Edge Sw to Agg Sw POD 0 ##############
     info( '*** Linking Edge Switches to Aggregate Switches\n' )
     net.addLink( r00, sw00) # |
-    #net.addLink( r00, sw01) # \
+    net.addLink( r00, sw01) # \
     #net.addLink( r01, sw00) # /
-    net.addLink( r01, sw01) # |
+    #net.addLink( r01, sw01) # |
 
     net.addLink( sw00, h1)
     net.addLink( sw00, h2)
