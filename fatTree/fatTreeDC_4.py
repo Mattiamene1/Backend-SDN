@@ -112,8 +112,8 @@ def defineNet():
 
     net.build()
     c0.start()
-    r00.start( [c0] )
-    r01.start( [c0] )
+    #r00.start( [c0] )
+    #r01.start( [c0] )
 
     #### r00 agg Router ####
     r03.cmd("ifconfig r03-eth0 0")
