@@ -101,10 +101,10 @@ def defineNet():
 
     ############# Linking Edge Sw to Agg Sw POD 0 ##############
     info( '*** Linking Edge Switches to Aggregate Switches\n' )
-    net.addLink( r00, sw00) # |
-    net.addLink( r00, sw01) # \
-    #net.addLink( r01, sw00) # /
-    #net.addLink( r01, sw01) # |
+    #net.addLink( r00, sw00) # |
+    #net.addLink( r00, sw01) # \
+    net.addLink( r01, sw00) # /
+    net.addLink( r01, sw01) # |
 
     net.addLink( sw00, h1)
     net.addLink( sw00, h2)
