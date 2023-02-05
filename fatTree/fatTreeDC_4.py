@@ -141,14 +141,16 @@ def defineNet():
     h4.cmd("ip route add default via 10.0.1.1")
 
     sw00.cmd("ovs-ofctl add-flow sw00 priority=1,arp,actions=flood")
-    sw00.cmd("ovs-ofctl add-flow sw00 priority=65535,ip,dl_dst=00:00:00:00:01:01,actions=output:1")
+    sw00.cmd("ovs-ofctl add-flow sw00 priority=65535,ip,dl_dst=00:00:00:00:01:01,actions=output:1") #r00-eths0
+    sw00.cmd("ovs-ofctl add-flow sw00 priority=65535,ip,dl_dst=00:00:00:00:02:01,actions=output:1") #r01-eth1
     sw00.cmd("ovs-ofctl add-flow sw00 priority=10,ip,nw_dst=10.0.0.2,actions=output:2")   #h1
     sw00.cmd("ovs-ofctl add-flow sw00 priority=10,ip,nw_dst=10.0.0.3,actions=output:3")   #h2
 
     sw01.cmd("ovs-ofctl add-flow sw01 priority=1,arp,actions=flood")
-    sw01.cmd("ovs-ofctl add-flow sw01 priority=65535,ip,dl_dst=00:00:00:00:01:02,actions=output:1")
-    sw01.cmd("ovs-ofctl add-flow sw01 priority=10,ip,nw_dst=10.0.1.2,actions=output:2")  #3
-    sw01.cmd("ovs-ofctl add-flow sw01 priority=10,ip,nw_dst=10.0.1.3,actions=output:3")  #4
+    sw01.cmd("ovs-ofctl add-flow sw01 priority=65535,ip,dl_dst=00:00:00:00:01:02,actions=output:1") # r00-eth1
+    sw01.cmd("ovs-ofctl add-flow sw01 priority=65535,ip,dl_dst=00:00:00:00:02:02,actions=output:1") # r01-eth1
+    sw01.cmd("ovs-ofctl add-flow sw01 priority=10,ip,nw_dst=10.0.1.2,actions=output:2")  #h3
+    sw01.cmd("ovs-ofctl add-flow sw01 priority=10,ip,nw_dst=10.0.1.3,actions=output:3")  #h4
 
 
     
