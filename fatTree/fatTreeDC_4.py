@@ -16,16 +16,17 @@ HOSTS:                h1  h2      h3  h4      h5  h6      h7  h8
                             POD 0                    POD 1
 """
 
-from ipaddress import ip_address
-from mininet.topo import Topo
 from mininet.net import Mininet
-from mininet.node import CPULimitedHost
-from mininet.link import Link, TCLink
 from mininet.node import Node
 from mininet.node import RemoteController, OVSKernelSwitch, UserSwitch
-from mininet.log import setLogLevel, info
 from mininet.cli import CLI
+from mininet.log import setLogLevel, info
+from mininet.link import Link, TCLink
+
+from ipaddress import ip_address
 import time
+from mininet.topo import Topo
+from mininet.node import CPULimitedHost
 from mininet.util import dumpNodeConnections
 
 # Node implementing a linux router, source: https://github.com/mininet/mininet/blob/master/examples/linuxrouter.py
@@ -50,6 +51,7 @@ class LinuxRouter( Node ):
 
 
 def defineNet():
+
     net = Mininet( controller=RemoteController, link=TCLink, switch=OVSKernelSwitch )
     
     info( '*** Adding Hosts ***\n' )
@@ -120,7 +122,7 @@ def defineNet():
     r00.cmd("ifconfig r00-eth0 hw ether 00:00:00:00:01:01")
     r00.cmd("ifconfig r00-eth1 hw ether 00:00:00:00:01:02")
     r00.cmd("ip addr add 10.0.0.1/24 brd + dev r00-eth0") #h1
-    r00.cmd("ip addr add 10.0.0.3/24 brd + dev r00-eth1") #h2
+    r00.cmd("ip addr add 10.0.1.1/24 brd + dev r00-eth1") #h2
     r00.cmd("echo 1 > /proc/sys/net/ipv4/ip_forward")
 
     #### r01 agg Router #####
