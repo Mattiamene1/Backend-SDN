@@ -102,8 +102,8 @@ def defineNet():
     ############# Linking Edge Sw to Agg Sw POD 0 ##############
     info( '*** Linking Edge Switches to Aggregate Switches\n' )
     net.addLink( r00, sw00) # |
-    net.addLink( r00, sw01) # \
-    net.addLink( r01, sw00) # /
+    #net.addLink( r00, sw01) # \
+    #net.addLink( r01, sw00) # /
     net.addLink( r01, sw01) # |
 
     net.addLink( sw00, h1)
@@ -137,6 +137,7 @@ def defineNet():
     #### Hosts pod 0 ####
     h1.cmd("ip route add default via 10.0.0.1")
     h2.cmd("ip route add default via 10.0.0.1")
+
     h3.cmd("ip route add default via 10.0.1.1")
     h4.cmd("ip route add default via 10.0.1.1")
 
