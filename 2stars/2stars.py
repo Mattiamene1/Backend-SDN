@@ -14,7 +14,7 @@ def topology():
     h3 = net.addHost( 'h3', ip="10.0.2.2/24", mac="00:00:00:00:00:03" )
     h4 = net.addHost( 'h4', ip="10.0.2.3/24", mac="00:00:00:00:00:04" )
 
-    r1 = net.addHost( 'r1', ip="10.0.0.254")
+    r1 = net.addHost( 'r1') #, ip="10.0.0.254")
 
     s1 = net.addSwitch( 's1')
     s2 = net.addSwitch( 's2')
@@ -32,7 +32,7 @@ def topology():
     net.build()
     c0.start()
     #s1.start( [c0] )
-    #s2.start( [c0] )
+    s2.start( [c0] )
 
     r1.cmd("ifconfig r1-eth0 0")
     r1.cmd("ifconfig r1-eth1 0")
