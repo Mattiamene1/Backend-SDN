@@ -43,8 +43,8 @@ def topology():
     r1.cmd("echo 1 > /proc/sys/net/ipv4/ip_forward")
 
     h1.cmd("ip route add default via 10.0.1.1")
-    h2.cmd("ip route add default via 10.0.2.1")
-    h3.cmd("ip route add default via 10.0.1.1")
+    h2.cmd("ip route add default via 10.0.1.1")
+    h3.cmd("ip route add default via 10.0.2.1")
     h4.cmd("ip route add default via 10.0.2.1")
 
     s1.cmd("ovs-ofctl add-flow s1 priority=1,arp,actions=flood")
@@ -54,8 +54,8 @@ def topology():
 
     s2.cmd("ovs-ofctl add-flow s2 priority=1,arp,actions=flood")
     s2.cmd("ovs-ofctl add-flow s2 priority=65535,ip,dl_dst=00:00:00:00:01:02,actions=output:1")
-    s2.cmd("ovs-ofctl add-flow s2 priority=10,ip,nw_dst=10.0.2.2,actions=output:2")
-    s2.cmd("ovs-ofctl add-flow s2 priority=10,ip,nw_dst=10.0.2.3,actions=output:3")
+    s2.cmd("ovs-ofctl add-flow s2 priority=10,ip,nw_dst=10.0.2.2,actions=output:2") #h3
+    s2.cmd("ovs-ofctl add-flow s2 priority=10,ip,nw_dst=10.0.2.3,actions=output:3") #h4
 
     info( '\n*** Starting network\n')
     net.start()
