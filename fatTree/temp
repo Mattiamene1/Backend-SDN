@@ -1,3 +1,13 @@
+    ################# Core Routers ############################
+    #info( '*** Adding Core Routers\n' )
+    #r1 = net.addHost( 'r1') #, ip="10.4.1.1/24", cls=LinuxRouter)    #Router core 0
+    #r2 = net.addHost( 'r2', ip="10.4.1.2/24", cls=LinuxRouter)    #Router core 1
+    #r3 = net.addHost( 'r3', ip="10.4.1.3/24", cls=LinuxRouter)    #Router core 2
+    #r4 = net.addHost( 'r4', ip="10.4.1.4/24", cls=LinuxRouter)    #Router core 3 
+
+
+
+
 
     #( '*** Adding Hosts POD 1\n' )
     #h5 = net.addHost( 'h7', ip="10.1.0.2/24", mac="00:00:00:00:00:05")  #Host 5 POD 1

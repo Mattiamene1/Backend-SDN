@@ -7,11 +7,11 @@ from ryu.lib.packet import packet
 from ryu.lib.packet import ethernet
 
 #https://git.comnets.net/public-repo/comnetsemu/-/blob/master/app/software_defined_networks_examples/ex03/sdn_switch_13.py
-class TopologyMorphing(app_manager.RyuApp):
+class Topology(app_manager.RyuApp):
     OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
     
     def __init__(self, *args, **kwargs):
-        super(TopologyMorphing, self).__init__(*args, **kwargs)
+        super(Topology, self).__init__(*args, **kwargs)
         
         self.mac_to_port = {}
 
