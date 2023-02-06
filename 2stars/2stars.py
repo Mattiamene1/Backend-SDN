@@ -35,13 +35,11 @@ def topology():
     s2.start( [c0] )
 
     r1.cmd("ifconfig r1-eth1 0")
-    r1.cmd("ifconfig r1-eth1 hw ether 00:00:00:00:01:01")
-    r1.cmd("ip addr add 10.0.1.1/24 brd + dev r1-eth1")
-
     r1.cmd("ifconfig r1-eth2 0")
+    r1.cmd("ifconfig r1-eth1 hw ether 00:00:00:00:01:01")
     r1.cmd("ifconfig r1-eth2 hw ether 00:00:00:00:01:02")
+    r1.cmd("ip addr add 10.0.1.1/24 brd + dev r1-eth1")
     r1.cmd("ip addr add 10.0.2.1/24 brd + dev r1-eth2")
-
     r1.cmd("echo 1 > /proc/sys/net/ipv4/ip_forward")
 
 
