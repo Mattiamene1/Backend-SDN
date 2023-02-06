@@ -11,7 +11,7 @@ def topology():
     # Add hosts and switches
     h1 = net.addHost( 'h1', ip="10.0.1.2/24", mac="00:00:00:00:00:01" )
     h2 = net.addHost( 'h2', ip="10.0.1.3/24", mac="00:00:00:00:00:02" )
-    
+
     h3 = net.addHost( 'h3', ip="10.0.2.2/24", mac="00:00:00:00:00:03" )
     h4 = net.addHost( 'h4', ip="10.0.2.3/24", mac="00:00:00:00:00:04" )
 
@@ -20,7 +20,7 @@ def topology():
     s1 = net.addSwitch( 's1')
     s2 = net.addSwitch( 's2')
 
-    c0 = net.addController( 'c0', controller=RemoteController, ip='127.0.0.1', port=6633 )
+    c0 = net.addController( 'c0', controller=RemoteController, ip='10.0.0.254', port=6633 )
 
     net.addLink( r1, s1 )
     net.addLink( r1, s2 )
