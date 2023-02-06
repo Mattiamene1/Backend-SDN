@@ -14,7 +14,7 @@ def topology():
     h3 = net.addHost( 'h3', ip="10.0.2.2/24", mac="00:00:00:00:00:03" )
     h4 = net.addHost( 'h4', ip="10.0.2.3/24", mac="00:00:00:00:00:04" )
 
-    r1 = net.addHost( 'r1')
+    r1 = net.addHost( 'r1', ip="10.0.0.1")
 
     s1 = net.addSwitch( 's1')
     s2 = net.addSwitch( 's2')
@@ -34,13 +34,16 @@ def topology():
     s1.start( [c0] )
     s2.start( [c0] )
 
-    r1.cmd("ifconfig r1-eth0 0")
     r1.cmd("ifconfig r1-eth1 0")
-    r1.cmd("ifconfig r1-eth0 hw ether 00:00:00:00:01:01")
-    r1.cmd("ifconfig r1-eth1 hw ether 00:00:00:00:01:02")
-    r1.cmd("ip addr add 10.0.1.1/24 brd + dev r1-eth0")
-    r1.cmd("ip addr add 10.0.2.1/24 brd + dev r1-eth1")
+    r1.cmd("ifconfig r1-eth1 hw ether 00:00:00:00:01:01")
+    r1.cmd("ip addr add 10.0.1.1/24 brd + dev r1-eth1")
+
+    r1.cmd("ifconfig r1-eth2 0")
+    r1.cmd("ifconfig r1-eth2 hw ether 00:00:00:00:01:02")
+    r1.cmd("ip addr add 10.0.2.1/24 brd + dev r1-eth2")
+
     r1.cmd("echo 1 > /proc/sys/net/ipv4/ip_forward")
+
 
     h1.cmd("ip route add default via 10.0.1.1")
     h2.cmd("ip route add default via 10.0.1.1")
