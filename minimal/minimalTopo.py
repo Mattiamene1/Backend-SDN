@@ -34,5 +34,5 @@ if __name__ == 'main':
     runMinimalTopo()
 
 topos = {
-    'minimal': MinimalTopo
+    'minimal': minimalTopo
 }
