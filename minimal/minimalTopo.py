@@ -26,6 +26,7 @@ def runMinimalTopo():
         autoSetMacs=True )
 
     net.start()
+    net.pingAll()
     CLI( net )
     net.stop()
 
