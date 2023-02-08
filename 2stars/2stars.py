@@ -3,8 +3,9 @@ from mininet.node import Controller, RemoteController, OVSKernelSwitch, UserSwit
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 from mininet.link import Link, TCLink
+from mininet.topo import Topo
 
-def topology():
+def twostars( Topo ):
 
     net = Mininet( controller=RemoteController, link=TCLink, switch=OVSKernelSwitch )
 
@@ -68,4 +69,8 @@ def topology():
 
 if __name__ == '__main__':
     setLogLevel( 'info' )
-    topology()  
+    twostars()  
+
+topos = {
+    'twostars' : twostars
+}

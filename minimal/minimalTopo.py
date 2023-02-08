@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from mininet.net import Mininet
 from mininet.topo import Topo
 from mininet.node import RemoteController, OVSSwitch
@@ -37,3 +39,5 @@ if __name__ == 'main':
 topos = {
     'minimal': minimalTopo
 }
+
+#sudo mn --custom minimalTopo.py --topo minimal --mac --switch ovs --controller remote
