@@ -4,8 +4,7 @@
   "description": "Softwarized And Virtualized mobile networks project 2022",
   "main": "index.js",
   "scripts": {
-    "start": "index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodejs index.js"
   },
   "repository": {
     "type": "git",
