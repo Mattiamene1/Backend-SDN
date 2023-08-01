@@ -4,6 +4,7 @@
   "description": "Softwarized And Virtualized mobile networks project 2022",
   "main": "index.js",
   "scripts": {
+    "start": "index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,4 @@
     "url": "https://github.com/Mattiamene1/Backend-SDN/issues"
   },
   "homepage": "https://github.com/Mattiamene1/Backend-SDN#readme"
-  
 }
