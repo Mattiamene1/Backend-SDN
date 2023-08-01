@@ -1,0 +1,25 @@
+{
+  "name": "backend-sdn",
+  "version": "1.0.0",
+  "description": "Softwarized And Virtualized mobile networks project 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mattiamene1/Backend-SDN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "bugs": {
+    "url": "https://github.com/Mattiamene1/Backend-SDN/issues"
+  },
+  "homepage": "https://github.com/Mattiamene1/Backend-SDN#readme"
+  
+}
