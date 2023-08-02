@@ -8,6 +8,7 @@ const BASE_URL = 'http://127.0.0.1:8082'
 app.use(cors())
 app.get('/hosts', (req, res) => {
     axios.get(BASE_URL + '/v1.0/topology/hosts').then(response => {
+        response.data = "hosts api req"
         res.send(response.data)
     }).catch(error => {
         console.log(error)
