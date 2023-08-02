@@ -1,2 +1,5 @@
-# ingore node_modules folders
+# Ingore node_modules folders
 node_modules
+
+# Ignore JSON package
+package-lock.json
