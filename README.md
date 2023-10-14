@@ -14,10 +14,8 @@ Softwarized And Virtualized mobile networks project 2022
 - ```npm install``` to install all the dependencies
 - ```npm run start``` to run the project
 
-## To test API
-- Postman
-
-###
+## Api Request
 - /host
 - /switches
 - /links
+- /stats/flow/:id
