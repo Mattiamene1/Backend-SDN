@@ -19,6 +19,9 @@ Softwarized And Virtualized mobile networks project 2022
     - Host Port: 3000
     - Guest IP: empty
     - Guest Port: 22
+- Log in into the machine:
+    - username: comnetsemu
+    - password: comnetsemu
 - connect to the machine via ssh
     - ```ssh -p 3000 comnetsemu@127.0.0.1```
     - use the password: comnetsemu
