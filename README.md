@@ -7,12 +7,21 @@ Softwarized And Virtualized mobile networks project 2022
 - Diamand Muka
 
 ## Dependencies
-- Node
+- Node (npm v10.1.0, nvm v0.39.5)
 - Cors
 
 ## To run
+- Download the comnetsemu environment [here](https://www.granelli-lab.org/researches/relevant-projects/comnetsemu-labs)
+- Set NAT as network adapter and into advanced settings add the port forwarding as follow:
+    - Name: ssh
+    - Protocol: TPC
+    - Host IP: empty
+    - Host Port: 3000
+    - Guest IP: empty
+    - Guest Port: 22
+- clone this repository inside
 - ```npm install``` to install all the dependencies
-- ```npm run start``` to run the project
+- ```npm start``` to run the backend
 
 ## Api Request
 - /host
