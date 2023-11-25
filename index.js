@@ -2,8 +2,8 @@ const express = require('express')
 const axios = require('axios').default
 const cors = require('cors')
 const app = express()
-const port = 80
-const BASE_URL = 'http://127.0.0.1:80'
+const port = 3000
+const BASE_URL = 'http://127.0.0.1:3000'
 
 app.use(cors())
 app.get('/hosts', (req, res) => {
