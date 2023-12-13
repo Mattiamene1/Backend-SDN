@@ -28,17 +28,32 @@ Softwarized And Virtualized mobile networks project 2022
 - clone this repository inside
 - ```npm install``` to install all the dependencies
 
-> The files into **ryu_app** folder are available into the [Ryu repository](https://github.com/faucetsdn/ryu/tree/master/ryu/app)
+> The files into **ryu_app** folder are the Ryu's APIs, they are available into the [Ryu repository](https://github.com/faucetsdn/ryu/tree/master/ryu/app).
+
+### Add the Front End
+Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), check the README file.
 
 ## Run the project
 Once the environment is ready, open the terminal
-- ```screen```
-    Then press *Enter*, a new shell will appear:
+- Run the nodeJs code
     - ```cd Backend-SDN```
-    - ```npm start``` 
+    - ```screen``` Then press *Enter*, a new shell will appear:
+    - ```npm start```
+    - <ctrl + a>, then <d> to close the shell
 
-## Api Request
-- /host
-- /switches
-- /links
-- /stats/flow/:id
+- Run the rest_topology.py Ryu app
+    - ```cd Backend-SDN/ryu_app```
+    - ```screen``` Then press *Enter*, a new shell will appear:
+    - ```ryu-manager rest_topology.py```
+    - <ctrl + a>, then <d> to close the shell
+
+- Run the ofctl_rest.py Ryu app
+    - ```cd Backend-SDN/ryu_app```
+    - ```screen``` Then press *Enter*, a new shell will appear:
+    - ```ryu-manager ofctl_rest.py```
+    - <ctrl + a>, then <d> to close the shell
+
+> ```screen -ls``` to show the screens list
+
+## Use the GUI
+Navigate the *http://localhost:8000/*
