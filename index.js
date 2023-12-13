@@ -3,16 +3,15 @@ const axios = require('axios').default
 const cors = require('cors')
 const app = express()
 const port = 3000
-const BASE_URL = 'http://127.0.0.1:3000'
+const BASE_URL = 'http://127.0.0.1:8080'
 
 app.use(cors())
 app.get('/hosts', (req, res) => {
     axios.get(BASE_URL + '/v1.0/topology/hosts').then(response => {
-        response.data = "hosts api req"
         res.send(response.data)
     }).catch(error => {
         console.log(error)
-        res.status(500).send('error')
+        res.status(500).send('error-hosts')
     })
 })
 
