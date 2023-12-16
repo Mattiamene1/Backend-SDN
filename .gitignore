@@ -3,3 +3,7 @@ node_modules
 
 # Ignore JSON package
 package-lock.json
+
+# Ignore pycache
+__pycache__/
+ryu_app/__pycache__/
