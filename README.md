@@ -12,21 +12,24 @@ Softwarized And Virtualized mobile networks project 2022
 
 ## Environment
 - Download the comnetsemu environment [here](https://www.granelli-lab.org/researches/relevant-projects/comnetsemu-labs)
+- Check the IP of the VM typing ```ifconfig``` that will be used in the VM port forwarding config (in my case 10.0.2.15)
 - we used Virtualbox, so we set NAT with some port forwarding rules as follow:
     
     **Name** | **Protocol** | **Host IP** | **Host Port** | **Guest IP** | **Guest Port** 
     --- | --- | --- | --- |--- |--- 
+    SSH | TCP | empty | 2200 | 10.0.2.15 | 22
     Back End | TCP | empty | 3000 | 10.0.2.15 | 3000
     Front End | TCP | empty | 8000 | 10.0.2.15 | 80
     API1 | TCP | empty | 8080 | 10.0.2.15 | 8080
-    API2 | TCP | empty | 8082 | 10.0.2.15 | 8082
-    SSH | TCP | empty | 2200 | 10.0.2.15 | 22
-
+    
 - Launch the Virtualbox Comnetsemu VM and then connect to the machine via ssh
-    - ```ssh -p 2200 comnetsemu@localhost```
+    - ```ssh -p 2200 comnetsemu@localhost``` and type *yes*    
     - use the password: *comnetsemu*
+
+## Set Up
+- Install git
 - clone this repository inside
-- ```npm install``` to install all the dependencies
+- - Launch the set up script ```sudo bash script.sh```
 
 > The files into **ryu_app** folder are the Ryu's APIs, they are available into the [Ryu repository](https://github.com/faucetsdn/ryu/tree/master/ryu/app).
 

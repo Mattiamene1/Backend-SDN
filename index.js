@@ -20,7 +20,7 @@ app.get('/switches', (req, res) => {
         res.send(response.data)
     }).catch(error => {
         console.log(error)
-        res.status(500).send('error')
+        res.status(500).send('error switches')
     })
 })
 
@@ -29,7 +29,7 @@ app.get('/links', (req, res) => {
         res.send(response.data)
     }).catch(error => {
         console.log(error)
-        res.status(500).send('error')
+        res.status(500).send('error links')
     })
 })
 
