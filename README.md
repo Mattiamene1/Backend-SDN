@@ -33,30 +33,33 @@ Softwarized And Virtualized mobile networks project 2022
 
 > The files into **ryu_app** folder are the Ryu's APIs, they are available into the [Ryu repository](https://github.com/faucetsdn/ryu/tree/master/ryu/app).
 
-### Add the Front End
+### Add the Front End -------- Da implementare nello script
 Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), check the README file.
 
 ## Run the project
-Once the environment is ready, open the terminal
-- Run the nodeJs code
+Once the environment is ready, open the terminal (If you used the script, you can go to the next step)
+- Run the backend
     - ```cd Backend-SDN```
     - ```screen``` Then press *Enter*, a new shell will appear:
     - ```npm start```
     - <ctrl + a>, then <d> to close the shell
 
-- Run the rest_topology.py Ryu app
+- Run the Mininet network
+    - ```ssh -p 2200 comnetsemu@localhost``` and use the password: *comnetsemu*
     - ```cd Backend-SDN/ryu_app```
     - ```screen``` Then press *Enter*, a new shell will appear:
-    - ```ryu-manager rest_topology.py```
+    - ```sudo mn --topo tree,3 --controller remote```
     - <ctrl + a>, then <d> to close the shell
 
 - Run the ofctl_rest.py Ryu app
+    - ```ssh -p 2200 comnetsemu@localhost``` and use the password: *comnetsemu*
     - ```cd Backend-SDN/ryu_app```
     - ```screen``` Then press *Enter*, a new shell will appear:
-    - ```ryu-manager ofctl_rest.py```
+    - ```ryu-manager --observe-links ryu.app.simple_switch ryu.app.gui_topology.gui_topology```
     - <ctrl + a>, then <d> to close the shell
 
 > ```screen -ls``` to show the screens list
 
 ## Use the GUI
 Navigate the *http://localhost:8000/*
+> Watch Out! It may needs a few refreshes
