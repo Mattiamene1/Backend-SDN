@@ -1,38 +1,40 @@
 #!/bin/bash
 
-# Start a new tmux session and run npm start in the Backend-SDN directory
-tmux new-session -d -s Backend-SDN 'cd /Backend-SDN && npm start'
+echo "Active screens: "
+screen -list
 
-# Split the tmux window vertically and run mn command in the ryu-app directory
-tmux split-window -v -t Backend-SDN 'cd /Backend-SDN/ryu-app && mn --topo tree,3 --controller=remote'
+echo "Killing screens..."
+sudo killall screen
 
-# Split the tmux window horizontally and run ryu-manager command in the ryu-app directory
-tmux split-window -h -t Backend-SDN 'cd /Backend-SDN/ryu-app && ryu-manager --observe-links ryu.app.simple_switch ryu.app.gui_topology.gui_topology'
+echo "Result: "
+screen -list
 
-# Attach to the tmux session to view the terminals
-tmux attach -t Backend-SDN
+echo "Starting new screens"
 
+echo "Starting node..."
+cd /home/comnetsemu/Backend-SDN
+screen -d -m bash -c "npm start"
+sleep 5
 
-#cd /Backend-SDN
-#screen
-#npm start
-#echo -en "\033[1;1H"
+echo "Starting mininet..."
+cd /home/comnetsemu/Backend-SDN/ryu_app
+sudo mn -c
+screen -d -m bash -c "sudo mn --topo tree,3 --controller=remote"
+sleep 5
 
-#cd /Backend-SDN/ryu-app
-#screen
-#mn --topo tree,3 --controller=remote
-#echo -en "\033[1;1H"
-
-#cd /Backend-SDN/ryu-app
-#screen
-#ryu-manager --observe-links ryu.app.simple_switch ryu.app.gui_topology.gui_topology
-#echo -en "\033[1;1H"
+echo "Starting ryu-controller..."
+cd /home/comnetsemu/Backend-SDN/ryu_app
+screen -d -m bash -c "ryu-manager --observe-links ryu.app.simple_switch ryu.app.gui_topology.gui_topology"
 
 
-#gnome-terminal --title="backend" --working-directory=~/Backend-SDN/ -- npm start
+echo "Active screens: "
+screen -list
+sudo screen -list
 
-#gnome-terminal --title="mininet" --working-directory=~/Backend-SDN/ryu-app -- sudo mn --topo tree,3 --controller=remote
 
-#gnome-terminal --title="remote" --working-directory=~/Backend-SDN/ryu-app --command "ryu-manager --observe-links ryu.app.simple_switch ryu.app.gui_topology.gui_topology"
+echo "Pulling frontend: "
+cd /var/www/html
+sudo git pull
 
+echo "Finish! Go to: https://localhost:8000"
 
