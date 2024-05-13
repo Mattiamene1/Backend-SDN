@@ -1,15 +1,16 @@
 #!/bin/bash
 
-#!/bin/bash
+# Start a new tmux session and run npm start in the Backend-SDN directory
+tmux new-session -d -s Backend-SDN 'cd /Backend-SDN && npm start'
 
-# Open terminal window for Backend-SDN
-gnome-terminal --working-directory=/Backend-SDN -- npm start
+# Split the tmux window vertically and run mn command in the ryu-app directory
+tmux split-window -v -t Backend-SDN 'cd /Backend-SDN/ryu-app && mn --topo tree,3 --controller=remote'
 
-# Open terminal window for Ryu controller
-gnome-terminal --working-directory=/Backend-SDN/ryu-app -- mn --topo tree,3 --controller=remote
+# Split the tmux window horizontally and run ryu-manager command in the ryu-app directory
+tmux split-window -h -t Backend-SDN 'cd /Backend-SDN/ryu-app && ryu-manager --observe-links ryu.app.simple_switch ryu.app.gui_topology.gui_topology'
 
-# Open terminal window for Ryu manager
-gnome-terminal --working-directory=/Backend-SDN/ryu-app -- ryu-manager --observe-links ryu.app.simple_switch ryu.app.gui_topology.gui_topology
+# Attach to the tmux session to view the terminals
+tmux attach -t Backend-SDN
 
 
 #cd /Backend-SDN
