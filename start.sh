@@ -5,7 +5,15 @@ screen
 npm start
 echo -en "\033[1;1H"
 
+cd /Backend-SDN/ryu-app
+screen
+mn --topo tree,3 --controller=remote
+echo -en "\033[1;1H"
 
+cd /Backend-SDN/ryu-app
+screen
+ryu-manager --observe-links ryu.app.simple_switch ryu.app.gui_topology.gui_topology
+echo -en "\033[1;1H"
 
 
 #gnome-terminal --title="backend" --working-directory=~/Backend-SDN/ -- npm start
