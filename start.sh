@@ -36,5 +36,5 @@ echo "Pulling frontend: "
 cd /var/www/html
 sudo git pull
 
-echo "Finish! Go to: https://localhost:8000"
+echo "Finish! Go to: http://localhost:8000"
 
