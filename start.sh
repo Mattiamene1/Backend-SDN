@@ -1,7 +1,11 @@
 #!/bin/bash
 
-konsole --title="backend" --workdir=~/Backend-SDN/ -e npm start
-konsole --title="mininet" --workdir=~/Backend-SDN/ryu-app -e sudo mn --topo tree,3 --controller=remote
+cd /Backend-SDN
+screen
+npm start
+echo -en "\033[1;1H"
+
+
 
 
 #gnome-terminal --title="backend" --working-directory=~/Backend-SDN/ -- npm start
