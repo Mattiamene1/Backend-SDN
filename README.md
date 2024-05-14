@@ -29,14 +29,24 @@ Softwarized And Virtualized mobile networks project 2022
 ## Set Up
 - Install git
 - clone this repository inside
-- - Launch the set up script ```sudo bash script.sh```
+- Move inside ```cd Backend-SDN``` and then download all the dependencies ```npm i```
+- Make all the actions as sudo
+> Edit sudoers file ```sudo visudo``` and configure it as follow:
+- root    ALL=(ALL:ALL) ALL
+- %admin ALL=(ALL) ALL
+- %sudo   ALL=(ALL:ALL) ALL
+Now you can operate as sudo
+# Automatic Start
+- ```sudo su``` 
+- Launch the start script inside the repo folder ```./start.sh```
 
 > The files into **ryu_app** folder are the Ryu's APIs, they are available into the [Ryu repository](https://github.com/faucetsdn/ryu/tree/master/ryu/app).
 
-### Add the Front End -------- Da implementare nello script
-Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), check the README file.
+## Setup Apache2
+Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), the start.sh will automatically copy it inside the /var/www/html/ Apache folder.
+> Remember to configure it in order to expose the web interface
 
-## Run the project
+# Manual Start
 Once the environment is ready, open the terminal (If you used the script, you can go to the next step)
 - Run the backend
     - ```cd Backend-SDN```
@@ -61,5 +71,4 @@ Once the environment is ready, open the terminal (If you used the script, you ca
 > ```screen -ls``` to show the screens list
 
 ## Use the GUI
-Navigate the *http://localhost:8000/*
-> Watch Out! It may needs a few refreshes
+Navigate the *http://localhost:8000/* or follow the start.sh prompt
