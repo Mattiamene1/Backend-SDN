@@ -38,7 +38,8 @@ Softwarized And Virtualized mobile networks project 2022
 Now you can operate as sudo
 # Automatic Start
 - ```sudo su``` 
-- Launch the start script inside the repo folder ```./start.sh```
+- Make start.sh file executable ```chmod u+x start.sh```
+- Launch the start script inside the repo folder ```./start.sh``` to run the project
 
 > The files into **ryu_app** folder are the Ryu's APIs, they are available into the [Ryu repository](https://github.com/faucetsdn/ryu/tree/master/ryu/app).
 
@@ -46,6 +47,7 @@ Now you can operate as sudo
 Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), the start.sh will automatically copy it inside the /var/www/html/ Apache folder.
 > Remember to configure it in order to expose the web interface
 
+If something goes wrong
 # Manual Start
 Once the environment is ready, open the terminal (If you used the script, you can go to the next step)
 - Run the backend
