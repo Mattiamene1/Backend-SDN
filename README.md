@@ -7,7 +7,7 @@ Softwarized And Virtualized mobile networks project 2022
 - Diamand Muka
 
 ## Dependencies
-- Node (npm v10.1.0, nvm v0.39.5)
+- Node
 - Cors
 
 ## Environment
