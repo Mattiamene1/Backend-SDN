@@ -26,7 +26,7 @@ Softwarized And Virtualized mobile networks project 2024
     - ```ssh -p 2200 comnetsemu@localhost``` and type *yes*    
     - use the password: *comnetsemu*
 
-## Set Up
+## Set Up the environment
 - Install git
 - clone this repository inside
 - Move inside ```cd Backend-SDN``` and then download all the dependencies ```npm i```
@@ -36,16 +36,19 @@ Softwarized And Virtualized mobile networks project 2024
 - %admin ALL=(ALL) ALL
 - %sudo   ALL=(ALL:ALL) ALL
 Now you can operate as sudo
+
+## Setup Apache2
+Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), clone it in this way inside the folder that will be expose by Apache2
+- ```cd /var/www/html/```
+- ```sudo git clone https://github.com/Mattiamene1/Frontend-SDN .``` (Don't forget the point!)
+> Remember to configure it in order to expose the web interface
+
 # Automatic Start
 - ```sudo su``` 
 - Make start.sh file executable ```chmod u+x start.sh```
 - Launch the start script inside the repo folder ```./start.sh``` to run the project
 
 > The files into **ryu_app** folder are the Ryu's APIs, they are available into the [Ryu repository](https://github.com/faucetsdn/ryu/tree/master/ryu/app).
-
-## Setup Apache2
-Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), the start.sh will automatically copy it inside the /var/www/html/ Apache folder.
-> Remember to configure it in order to expose the web interface
 
 If something goes wrong
 # Manual Start
