@@ -1,7 +1,7 @@
 {
   "name": "backend-sdn",
   "version": "1.0.0",
-  "description": "Softwarized And Virtualized mobile networks project 2023",
+  "description": "Software-Defined Networking Project 2024",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
