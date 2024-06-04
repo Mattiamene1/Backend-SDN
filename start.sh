@@ -19,7 +19,10 @@ elif [ "$selection" == "T" ] || [ "$selection" == "t" ]; then
     topology=torus
 elif [ "$selection" == "A" ] || [ "$selection" == "a" ]; then
     topology=tree
-else echo "Error,select one of the above"    
+else
+    echo "Error, select one of the above options."
+    exit 1
+fi
 
 echo $topology
 
@@ -60,4 +63,3 @@ cd /var/www/html
 sudo git pull
 
 echo "Finish! Go to: http://localhost:8000"
-
