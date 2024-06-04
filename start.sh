@@ -3,7 +3,6 @@
 echo "Welcome to sdn Project MM DM FLR"
 echo "Select the topology:"
 printf "Press [\e[1,92mS\e[0m] to get SINGLE topo.\n"
-printf "Press [\e[1,92mR\e[0m] to get REVERSED topo.\n"
 printf "Press [\e[1,92mL\e[0m] to get LINEAR topo.\n"
 printf "Press [\e[1,92mT\e[0m] to get TORUS topo.\n"
 printf "Press [\e[1,92mA\e[0m] to get TREE topo.\n"
@@ -11,20 +10,31 @@ read -p "" selection
 
 if [ "$selection" == "S" ] || [ "$selection" == "s" ]; then
     topology=single
-elif [ "$selection" == "R" ] || [ "$selection" == "r" ]; then
-    topology=reversed
+    read -p "" host
+    echo "topology:$topology and $host of hosts"
 elif [ "$selection" == "L" ] || [ "$selection" == "l" ]; then
     topology=linear
+    echo "Select n° of switch:"
+    read -p "" switch
+    echo "topology:$topology and $switch"
 elif [ "$selection" == "T" ] || [ "$selection" == "t" ]; then
     topology=torus
+    echo "Select the lenght:"
+    read -p "" lenght
+    echo "Select the breadth:"
+    read -p "" breadth
+    echo "topology:$topology with lenght of $lenght and $breadth breadth"
 elif [ "$selection" == "A" ] || [ "$selection" == "a" ]; then
     topology=tree
+    echo "Select the fanout:"
+    read -p "" fanout
+    echo "Select the depht:"
+    read -p "" depht
+    echo "topology:$topology and a fanout of $fanout"
 else
     echo "Error, select one of the above options."
     exit 1
 fi
-
-echo $topology
 
 echo "Active screens: "
 screen -list
@@ -45,8 +55,20 @@ sleep 5
 echo "Starting mininet..."
 cd /home/comnetsemu/Backend-SDN/ryu_app
 sudo mn -c
-screen -d -m bash -c "sudo mn --topo tree,3 --controller=remote"
-sleep 5
+
+if [ "$selection" == "S" ] || [ "$selection" == "s" ]; then
+    echo "sudo mn --topo $topology,$host --controller=remote"
+    screen -d -m bash -c "sudo mn --topo $topology,$host --controller=remote"
+elif [ "$selection" == "L" ] || [ "$selection" == "l" ]; then
+    echo "sudo mn --topo $topology,$switch --controller=remote"
+    screen -d -m bash -c "sudo mn --topo $topology,$switch --controller=remote"
+elif [ "$selection" == "T" ] || [ "$selection" == "t" ]; then
+    echo "sudo mn --topo $topology,$lenght,$breadth --controller=remote"
+    screen -d -m bash -c "sudo mn --topo $topology,$lenght,$breadth --controller=remote"
+elif [ "$selection" == "A" ] || [ "$selection" == "a" ]; then
+    echo "sudo mn --topo $topology,$depht,$fanout --controller=remote"
+    screen -d -m bash -c "sudo mn --topo $topology,$depht,$fanout --controller=remote"
+fi
 
 echo "Starting ryu-controller..."
 cd /home/comnetsemu/Backend-SDN/ryu_app
