@@ -77,3 +77,28 @@ Once the environment is ready, open the terminal (If you used the script, you ca
 
 ## Use the GUI
 Navigate the *http://localhost:8000/* or follow the start.sh prompt
+
+## Folder Structure
+.<br>
+├── Gui.py<br>
+├── README.md<br>
+├── index.js<br>
+├── package-lock.json<br>
+├── package.json<br>
+├── ryu_app<br>
+│   ├── ofctl_rest.py<br>
+│   └── rest_topology.py<br>
+├── start.sh<br>
+└── topologies<br>
+    ├── 2stars<br>
+    │   ├── 2stars.py<br>
+    │   └── example3.png<br>
+    ├── 2switches<br>
+    │   └── 2switches.py<br>
+    ├── fatTree<br>
+    │   ├── fatTreeDC_4.py<br>
+    ├── minimal<br>
+    │   └── minimalTopo.py<br>
+    ├── star<br>
+    │   └── star.py<br>
+    └── topology.py<br>
