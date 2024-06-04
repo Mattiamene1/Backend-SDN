@@ -1,5 +1,28 @@
 #!/bin/bash
 
+echo "Welcome to sdn Project MM DM FLR"
+echo "Select the topology:"
+printf "Press [\e[1,92mS\e[0m] to get SINGLE topo.\n"
+printf "Press [\e[1,92mR\e[0m] to get REVERSED topo.\n"
+printf "Press [\e[1,92mL\e[0m] to get LINEAR topo.\n"
+printf "Press [\e[1,92mT\e[0m] to get TORUS topo.\n"
+printf "Press [\e[1,92mA\e[0m] to get TREE topo.\n"
+read -p "" selection
+
+if [ "$selection" == "S" ] || [ "$selection" == "s" ]; then
+    topology=single
+elif [ "$selection" == "R" ] || [ "$selection" == "r" ]; then
+    topology=reversed
+elif [ "$selection" == "L" ] || [ "$selection" == "l" ]; then
+    topology=linear
+elif [ "$selection" == "T" ] || [ "$selection" == "t" ]; then
+    topology=torus
+elif [ "$selection" == "A" ] || [ "$selection" == "a" ]; then
+    topology=tree
+else echo "Error,select one of the above"    
+
+echo $topology
+
 echo "Active screens: "
 screen -list
 

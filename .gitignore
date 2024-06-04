@@ -1,5 +1,6 @@
 # Ingore node_modules folders
 node_modules
+.history
 
 # Ignore pycache
 __pycache__/
