@@ -10,6 +10,7 @@ read -p "" selection
 
 if [ "$selection" == "S" ] || [ "$selection" == "s" ]; then
     topology=single
+    echo "Select n° of host"
     read -p "" host
     echo "topology:$topology and $host of hosts"
 elif [ "$selection" == "L" ] || [ "$selection" == "l" ]; then
