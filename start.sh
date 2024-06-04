@@ -20,17 +20,16 @@ elif [ "$selection" == "L" ] || [ "$selection" == "l" ]; then
     echo "topology:$topology and $switch"
 elif [ "$selection" == "T" ] || [ "$selection" == "t" ]; then
     topology=torus
-    echo "Select the lenght:"
+    echo "Select the lenght and the breadth(reccomended 3):"
     read -p "" lenght
-    echo "Select the breadth:"
-    read -p "" breadth
-    echo "topology:$topology with lenght of $lenght and $breadth breadth"
+    breadth=lenght
+    echo "topology:$topology with lenght of $lenght and $breadth breadth"   
 elif [ "$selection" == "A" ] || [ "$selection" == "a" ]; then
     topology=tree
-    echo "Select the fanout:"
-    read -p "" fanout
     echo "Select the depht:"
     read -p "" depht
+    echo "Select the fanout:"
+    read -p "" fanout
     echo "topology:$topology and a fanout of $fanout"
 else
     echo "Error, select one of the above options."
