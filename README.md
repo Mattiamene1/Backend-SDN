@@ -41,7 +41,7 @@ Now you can operate as sudo
 Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), clone it in this way inside the folder that will be expose by Apache2 <br>
 Follow this guidelines for more details [Install and Configure Apache](https://ubuntu.com/tutorials/install-and-configure-apache#1-overview)
 - Install apache with ```sudo apt update``` and then ```sudo apt install apache2```
-- Enable necessary Apache modules ```a2enmod rewrite```  and ```sudo a2enmod headers```
+- Enable necessary Apache modules ```sudo a2enmod rewrite```  and ```sudo a2enmod headers```
 - Restart Apache ```service apache2 restart```
 - Now in the /var/www/html/ folder you should see an index.html (default welcome page of Apache)
 - ```cd /var/www/html/```
