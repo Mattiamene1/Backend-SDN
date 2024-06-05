@@ -24,11 +24,11 @@ Softwarized And Virtualized mobile networks project 2024
     
 - Launch the Virtualbox Comnetsemu VM and then connect to the machine via ssh
     - ```ssh -p 2200 comnetsemu@localhost``` and type *yes*    
-    - use the password: *comnetsemu*
+    - use the password: *comnetsemu*  
 
 ## Set Up the environment
 - Install git
-- clone this repository inside
+- Clone this repository inside
 - Move inside ```cd Backend-SDN``` and then download all the dependencies ```npm i```
 - Make all the actions as sudo
 > Edit sudoers file ```sudo visudo``` and configure it as follow:
@@ -38,7 +38,12 @@ Softwarized And Virtualized mobile networks project 2024
 Now you can operate as sudo
 
 ## Setup Apache2
-Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), clone it in this way inside the folder that will be expose by Apache2
+Our front end is available [here](https://github.com/Mattiamene1/Frontend-SDN), clone it in this way inside the folder that will be expose by Apache2 <br>
+Follow this guidelines for more details [Install and Configure Apache](https://ubuntu.com/tutorials/install-and-configure-apache#1-overview)
+- Install apache with ```sudo apt update``` and then ```sudo apt install apache2```
+- Enable necessary Apache modules ```a2enmod rewrite```  and ```sudo a2enmod headers```
+- Restart Apache ```service apache2 restart```
+- Now in the /var/www/html/ folder you should see an index.html (default welcome page of Apache)
 - ```cd /var/www/html/```
 - ```sudo git clone https://github.com/Mattiamene1/Frontend-SDN .``` (Don't forget the point!)
 > Remember to configure it in order to expose the web interface
@@ -88,17 +93,4 @@ Navigate the *http://localhost:8000/* or follow the start.sh prompt
 ├── ryu_app<br>
 │   ├── ofctl_rest.py<br>
 │   └── rest_topology.py<br>
-├── start.sh<br>
-└── topologies<br>
-    ├── 2stars<br>
-    │   ├── 2stars.py<br>
-    │   └── example3.png<br>
-    ├── 2switches<br>
-    │   └── 2switches.py<br>
-    ├── fatTree<br>
-    │   ├── fatTreeDC_4.py<br>
-    ├── minimal<br>
-    │   └── minimalTopo.py<br>
-    ├── star<br>
-    │   └── star.py<br>
-    └── topology.py<br>
+└── start.sh<br>
