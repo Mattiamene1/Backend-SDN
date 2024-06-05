@@ -20,6 +20,7 @@ Softwarized And Virtualized mobile networks project 2024
     **Name** | **Protocol** | **Host IP** | **Host Port** | **Guest IP** | **Guest Port** 
     --- | --- | --- | --- |--- |--- 
     SSH | TCP | empty | 2200 | 10.0.2.15 | 22
+    Back End | TCP | empty | 3000 | 10.0.2.15 | 3000
     Front End | TCP | empty | 8000 | 10.0.2.15 | 80
     
 - Launch the Virtualbox Comnetsemu VM and then connect to the machine via ssh
