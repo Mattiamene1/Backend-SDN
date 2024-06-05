@@ -54,6 +54,10 @@ Follow this guidelines for more details [Install and Configure Apache](https://u
 
 > The files into **ryu_app** folder are the Ryu's APIs, they are available into the [Ryu repository](https://github.com/faucetsdn/ryu/tree/master/ryu/app).
 
+<img src="hhtps://github.com/Mattiamene1/Backend-SDN/blob/main/docs/start_image.png">
+
+> This script will ask the user the parameters based on the topology choosen.
+
 If something goes wrong
 # Manual Start
 Once the environment is ready, open the terminal (If you used the script, you can go to the next step)
