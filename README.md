@@ -46,7 +46,7 @@ Follow this guidelines for more details [Install and Configure Apache](https://u
 - Move into the Apache root with ```cd /var/www/html/```
 - Import our frontend with ```sudo git clone https://github.com/Mattiamene1/Frontend-SDN .``` (Don't forget the point!)
 - Make the www-data user owner of the folder /var/www/html/ and subfolders ```chown www-data:www-data -R *``` 
-> Remember to configure it in order to expose the web interface
+> We assume that your localhost IP is 127.0.0.1, you can check it with ```ip a```
 
 # Automatic Start
 - ```sudo su``` 
