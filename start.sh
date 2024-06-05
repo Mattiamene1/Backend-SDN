@@ -63,6 +63,7 @@ sudo mn -c
 
 echo "sudo mn --topo $topo_params --controller=remote"
 screen -d -m bash -c "sudo mn --topo $topo_params --controller=remote"
+sleep 1.5
 
 echo "Starting ryu-controller..."
 cd /home/comnetsemu/Backend-SDN/ryu_app
